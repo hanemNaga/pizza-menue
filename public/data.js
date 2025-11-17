@@ -42,21 +42,3 @@ const pizzaData = [
     soldOut: false,
   },
 ];
-
-function App() {
-  return (
-    <div className="App">
-      <h1>hello react!</h1>
-      <Pizza />
-    </div>
-  );
-}
-
-function Pizza() {
-  return (
-    <>
-      <h2>pizza</h2>
-    </>
-  );
-}
-export default App;
