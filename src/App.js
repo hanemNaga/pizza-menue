@@ -66,7 +66,7 @@ export default function App() {
   return (
     <div>
       <Header />
-      <main>
+      <menu className="menu">
         {pizzaData.map((pizza) => (
           <Pizza
             name={pizza.name}
@@ -75,7 +75,7 @@ export default function App() {
             key={pizza.index}
           />
         ))}
-      </main>
+      </menu>
 
       <Footer />
     </div>
@@ -101,5 +101,9 @@ function Pizza({ imgSrc, name, ingredients }) {
 }
 
 function Footer() {
-  return <footer>{new Date().toLocaleString()} we are currently open</footer>;
+  return (
+    <footer className="footer">
+      {new Date().toLocaleString()} we are currently open
+    </footer>
+  );
 }
