@@ -62,6 +62,12 @@ const pizzaData = [
   },
 ];
 
+const contactsIfo = [
+  "www.pizza.com",
+  "01020203040",
+  "www.facebook.com/pizzaco",
+];
+
 export default function App() {
   return (
     <div>
@@ -76,6 +82,10 @@ export default function App() {
           />
         ))}
       </menu>
+      <h3>please contact us on:</h3>
+      {contactsIfo.map((contact) => (
+        <Contacts contactData={contact}></Contacts>
+      ))}
 
       <Footer />
     </div>
@@ -106,4 +116,7 @@ function Footer() {
       {new Date().toLocaleString()} we are currently open
     </footer>
   );
+}
+function Contacts({ contactData }) {
+  return <p style={{ color: "rgba(40, 145, 40, 1)" }}>{contactData}</p>;
 }
