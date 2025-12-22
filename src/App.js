@@ -74,12 +74,7 @@ export default function App() {
       <Header />
       <menu className="menu">
         {pizzaData.map((pizza) => (
-          <Pizza
-            name={pizza.name}
-            ingredients={pizza.ingredients}
-            imgSrc={pizza.imgSrc}
-            key={pizza.index}
-          />
+          <Pizza pizzaObj={pizza} />
         ))}
       </menu>
       <h3>please contact us on:</h3>
@@ -99,13 +94,13 @@ function Header() {
     </header>
   );
 }
-function Pizza({ imgSrc, name, ingredients }) {
+function Pizza({ pizzaObj }) {
   return (
     <div className="pizza">
-      <img src={imgSrc} alt="" />
-      <h2>{name}</h2>
+      <img src={pizzaObj.imgSrc} alt="" />
+      <h2>{pizzaObj.name}</h2>
 
-      <p>{ingredients}</p>
+      <p>{pizzaObj.ingredients}</p>
     </div>
   );
 }
