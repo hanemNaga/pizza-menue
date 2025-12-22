@@ -101,6 +101,7 @@ function Pizza({ pizzaObj }) {
       <h2>{pizzaObj.name}</h2>
 
       <p>{pizzaObj.ingredients}</p>
+      <p> price: {pizzaObj.price}</p>
     </div>
   );
 }
