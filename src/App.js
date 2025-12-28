@@ -101,10 +101,13 @@ function Pizza({ pizzaObj }) {
   return (
     <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
       <img src={pizzaObj.imgSrc} alt="" />
-      <h2>{pizzaObj.name}</h2>
+      <div>
+        <h2>{pizzaObj.name}</h2>
 
-      <p>{pizzaObj.ingredients}</p>
-      <span>{pizzaObj.soldOut ? "Sold Out" : pizzaObj.price}</span>
+        <p>{pizzaObj.ingredients}</p>
+
+        <span>{pizzaObj.soldOut ? "Sold Out" : pizzaObj.price}</span>
+      </div>
     </li>
   );
 }
