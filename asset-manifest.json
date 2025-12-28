@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/pizza-menue/static/css/main.c2092e80.css",
+    "main.js": "/pizza-menue/static/js/main.4296f71e.js",
+    "static/js/453.5e45c2ef.chunk.js": "/pizza-menue/static/js/453.5e45c2ef.chunk.js",
+    "static/media/funghi.jpg": "/pizza-menue/static/media/funghi.3bf98b594acb0c6c7910.jpg",
+    "static/media/margherita.jpg": "/pizza-menue/static/media/margherita.05c7f4dba268fc2ddab1.jpg",
+    "static/media/spinaci.jpg": "/pizza-menue/static/media/spinaci.9c5a8a68fb98b5b69bc8.jpg",
+    "static/media/prosciutto.jpg": "/pizza-menue/static/media/prosciutto.936205a0bf7285dc2294.jpg",
+    "static/media/salamino.jpg": "/pizza-menue/static/media/salamino.0189c48034992ea8ff6d.jpg",
+    "index.html": "/pizza-menue/index.html",
+    "main.c2092e80.css.map": "/pizza-menue/static/css/main.c2092e80.css.map",
+    "main.4296f71e.js.map": "/pizza-menue/static/js/main.4296f71e.js.map",
+    "453.5e45c2ef.chunk.js.map": "/pizza-menue/static/js/453.5e45c2ef.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2092e80.css",
+    "static/js/main.4296f71e.js"
+  ]
+}
