@@ -73,13 +73,15 @@ export default function App() {
     <div>
       <Header />
       <menu className="menu">
-        {pizzaData.map((pizza) => (
-          <Pizza pizzaObj={pizza} />
-        ))}
+        <ul className="pizzas">
+          {pizzaData.map((pizza) => (
+            <Pizza pizzaObj={pizza} key={pizza.index} />
+          ))}
+        </ul>
       </menu>
       <h3>please contact us on:</h3>
-      {contactsIfo.map((contact) => (
-        <Contacts contactData={contact}></Contacts>
+      {contactsIfo.map((contact, index) => (
+        <Contacts contactData={contact} key={index}></Contacts>
       ))}
 
       <Footer />
@@ -96,20 +98,32 @@ function Header() {
 }
 function Pizza({ pizzaObj }) {
   return (
-    <div className="pizza">
+    <li className="pizza">
       <img src={pizzaObj.imgSrc} alt="" />
       <h2>{pizzaObj.name}</h2>
 
       <p>{pizzaObj.ingredients}</p>
       <p> price: {pizzaObj.price}</p>
-    </div>
+    </li>
   );
 }
 
 function Footer() {
+  const date = new Date().getHours();
+  const openHours = 10;
+  const closeHours = 22;
+  let isOpen = date >= openHours && date <= closeHours;
+
   return (
     <footer className="footer">
-      {new Date().toLocaleString()} we are currently open
+      {isOpen ? (
+        <div>
+          <p>we are open until {closeHours}:00 come and visit us</p>
+          <button className="btn">order now</button>
+        </div>
+      ) : (
+        <p>the shop is closed now</p>
+      )}
     </footer>
   );
 }
