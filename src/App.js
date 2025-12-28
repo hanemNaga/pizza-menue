@@ -97,6 +97,7 @@ function Header() {
   );
 }
 function Pizza({ pizzaObj }) {
+  if (pizzaObj.soldOut) return null;
   return (
     <li className="pizza">
       <img src={pizzaObj.imgSrc} alt="" />
@@ -117,14 +118,20 @@ function Footer() {
   return (
     <footer className="footer">
       {isOpen ? (
-        <div>
-          <p>we are open until {closeHours}:00 come and visit us</p>
-          <button className="btn">order now</button>
-        </div>
+        <Order closeHours={closeHours} />
       ) : (
         <p>the shop is closed now</p>
       )}
     </footer>
+  );
+}
+
+function Order(props) {
+  return (
+    <div>
+      <p>we are open until {props.closeHours}:00 come and visit us</p>
+      <button className="btn">order now</button>
+    </div>
   );
 }
 function Contacts({ contactData }) {
