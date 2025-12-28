@@ -22,3 +22,7 @@ the react features used :
 ---
 
 3-conditionally rendering.
+
+---
+
+4-rendering lists using map
