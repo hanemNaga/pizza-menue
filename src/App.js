@@ -66,24 +66,7 @@ export default function App() {
   return (
     <div>
       <Header />
-      <menu className="menu">
-        <h2>our menu</h2>
-        {pizzaData.length > 0 ? (
-          <>
-            <p>
-              authentic italian cousine.six creative dishes to choose from.all
-              form our stone oven.all organic, all delicious
-            </p>
-            <ul className="pizzas">
-              {pizzaData.map((pizza) => (
-                <Pizza pizzaObj={pizza} key={pizza.index} />
-              ))}
-            </ul>
-          </>
-        ) : (
-          <p>we are currently working on our menue</p>
-        )}
-      </menu>
+      <Menu />
 
       <Footer />
     </div>
@@ -95,6 +78,28 @@ function Header() {
     <header className="header">
       <h1>Fast react pizza co.</h1>
     </header>
+  );
+}
+function Menu() {
+  return (
+    <menu className="menu">
+      <h2>our menu</h2>
+      {pizzaData.length > 0 ? (
+        <>
+          <p>
+            authentic italian cousine.six creative dishes to choose from.all
+            form our stone oven.all organic, all delicious
+          </p>
+          <ul className="pizzas">
+            {pizzaData.map((pizza) => (
+              <Pizza pizzaObj={pizza} key={pizza.index} />
+            ))}
+          </ul>
+        </>
+      ) : (
+        <p>we are currently working on our menue</p>
+      )}
+    </menu>
   );
 }
 function Pizza({ pizzaObj }) {
