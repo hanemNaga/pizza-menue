@@ -8,6 +8,15 @@ a simple react project using:
          2-npm tool.
 
 the react features used :
+
+---
+
 1-react components.
+
+---
+
 2-react props.
+
+---
+
 3-conditionally rendering.
