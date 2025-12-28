@@ -62,27 +62,28 @@ const pizzaData = [
   },
 ];
 
-const contactsIfo = [
-  "www.pizza.com",
-  "01020203040",
-  "www.facebook.com/pizzaco",
-];
-
 export default function App() {
   return (
     <div>
       <Header />
       <menu className="menu">
-        <ul className="pizzas">
-          {pizzaData.map((pizza) => (
-            <Pizza pizzaObj={pizza} key={pizza.index} />
-          ))}
-        </ul>
+        <h2>our menu</h2>
+        {pizzaData.length > 0 ? (
+          <>
+            <p>
+              authentic italian cousine.six creative dishes to choose from.all
+              form our stone oven.all organic, all delicious
+            </p>
+            <ul className="pizzas">
+              {pizzaData.map((pizza) => (
+                <Pizza pizzaObj={pizza} key={pizza.index} />
+              ))}
+            </ul>
+          </>
+        ) : (
+          <p>we are currently working on our menue</p>
+        )}
       </menu>
-      <h3>please contact us on:</h3>
-      {contactsIfo.map((contact, index) => (
-        <Contacts contactData={contact} key={index}></Contacts>
-      ))}
 
       <Footer />
     </div>
@@ -97,14 +98,13 @@ function Header() {
   );
 }
 function Pizza({ pizzaObj }) {
-  if (pizzaObj.soldOut) return null;
   return (
-    <li className="pizza">
+    <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
       <img src={pizzaObj.imgSrc} alt="" />
       <h2>{pizzaObj.name}</h2>
 
       <p>{pizzaObj.ingredients}</p>
-      <p> price: {pizzaObj.price}</p>
+      <span>{pizzaObj.soldOut ? "Sold Out" : pizzaObj.price}</span>
     </li>
   );
 }
@@ -133,7 +133,4 @@ function Order(props) {
       <button className="btn">order now</button>
     </div>
   );
-}
-function Contacts({ contactData }) {
-  return <p style={{ color: "rgba(40, 145, 40, 1)" }}>{contactData}</p>;
 }
